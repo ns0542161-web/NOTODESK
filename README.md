@@ -1,75 +1,76 @@
-# React + TypeScript + Vite
+# NOTODESK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NOTODESK is a React + TypeScript + Vite application starter for building a modern note-taking or productivity dashboard.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is set up with:
 
-## React Compiler
+- React 19
+- TypeScript
+- Vite
+- ESLint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+It provides a clean starting point for building a custom workspace, task manager, or note-taking interface.
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Install dependencies:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+2. Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev
 ```
+
+3. Open the local URL shown in the terminal to view the app.
+
+## Available scripts
+
+```bash
+npm run dev
+```
+Runs the app in development mode with Vite hot reloading.
+
+```bash
+npm run build
+```
+Creates a production build.
+
+```bash
+npm run lint
+```
+Runs ESLint checks on the project.
+
+```bash
+npm run preview
+```
+Previews the production build locally.
+
+## Project structure
+
+```text
+NOTODESK/
+├── public/
+├── src/
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── eslint.config.js
+├── README.md
+└── .gitignore
+```
+
+## Notes
+
+This repository currently contains the default Vite starter app shell. You can customize the UI and logic in `src/App.tsx` and related files to turn it into your actual product.
+
+## License
+
+This project does not currently define a custom license.
+
